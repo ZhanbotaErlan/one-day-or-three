@@ -8,7 +8,8 @@ import streamlit as st
 
 # The app.py file is inside crossmarket_signals.
 # The results and figures folders are in the parent research folder.
-BASE = Path(__file__).resolve().parent.parent
+APP_DIR = Path(__file__).resolve().parent
+BASE = APP_DIR.parent if (APP_DIR.parent / "results").exists() else APP_DIR
 RESULTS = BASE / "results"
 FIGURES = BASE / "figures"
 
